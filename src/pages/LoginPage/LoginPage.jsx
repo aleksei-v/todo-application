@@ -1,7 +1,5 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
-
-import { Box } from '../../components/Box';
 import { ErrorText } from './LoginPage.styled';
 
 
