@@ -1,7 +1,7 @@
-import { useDeleteTodoMutation } from "redux/todos";
+import { useDeleteTodoMutation } from "redux/todos/todos";
 import { TodoLi, StyledBtn, StyledContent } from "./TodoListItem.styled";
 
-export const TodoListItem = ({id, text}) => {
+export const TodoListItem = ({ id, text }) => {
     const [deleteTodo, { isLoading }] = useDeleteTodoMutation();
 
     return (

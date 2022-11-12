@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { todosApi } from './todos'
+import { todosApi } from '../todos/todos'
 
 
 export const store = configureStore({
