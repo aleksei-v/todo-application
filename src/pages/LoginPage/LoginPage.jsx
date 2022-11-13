@@ -1,36 +1,31 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { useDispatch } from 'react-redux';
+import { login } from 'redux/auth/operations';
 import * as yup from 'yup';
 import { ErrorText } from './LoginPage.styled';
 
-
-
-const FormError = ({ name }) => {
-    return (
-        <ErrorMessage
-            name={name}
-            render={messaege => <ErrorText>{messaege}</ErrorText>}
-        />
-    )
-}
-
+const FormError = ({ name }) => (
+    <ErrorMessage
+        name={name}
+        render={messaege => <ErrorText>{messaege}</ErrorText>}
+    />);
 
 const schema = yup.object().shape({
-    login: yup.string().email().required(),
+    email: yup.string().email().required(),
     password: yup.string().min(6).max(16).required()
 })
 
 const initialValues = {
-    login: '',
+    email: '',
     password: '',
 };
     
 const LoginPage = () => {
 
-    const handleSubmit = (values, action) => {
-
-        console.log('values', values)
-        console.log(action)
-        action.resetForm()
+    const dispatch = useDispatch()
+    const handleSubmit = ({email,password}, {resetForm}) => {
+        dispatch(login({email, password}))
+        resetForm()
     }
     return (
         <>
@@ -39,8 +34,8 @@ const LoginPage = () => {
                 <Form>
                     <label>
                         Your login
-                        <Field type="email" name="login" />
-                        <FormError name='login' />
+                        <Field type="email" name="email" />
+                        <FormError name='email' />
                     </label>
 
                     <label>

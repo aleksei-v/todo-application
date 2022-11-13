@@ -1,4 +1,4 @@
-import { useCreateTodoMutation } from "redux/todos/todos";
+import { useCreateTodoMutation } from "redux/todos/slice";
 import { Navigate } from "react-router-dom";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 

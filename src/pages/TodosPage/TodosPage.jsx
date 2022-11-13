@@ -1,5 +1,5 @@
 import { Box } from "components/Box"
-import { useGetTodoQuery } from "redux/todos/todos";
+import { useGetTodoQuery } from "redux/todos/slice";
 import { TodoListItem } from 'components/TodoListItem/TodoListItem';
 import { BackLink } from './TodosPage.styled';
 

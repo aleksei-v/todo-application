@@ -1,4 +1,4 @@
-import { useDeleteTodoMutation } from "redux/todos/todos";
+import { useDeleteTodoMutation } from "redux/todos/slice";
 import { TodoLi, StyledBtn, StyledContent } from "./TodoListItem.styled";
 
 export const TodoListItem = ({ id, text }) => {
