@@ -22,7 +22,7 @@ const initialState = {
     error: null,
     isLoggedIn: false,
     isLoading: false,
-    isRefresing: false
+    isRefreshing: false
 };
 
 const authSlice = createSlice({
@@ -49,7 +49,7 @@ const authSlice = createSlice({
         [refreshCurrentUser.fulfilled](state, { payload }) {
             state.user = payload;
             state.isLoggedIn = true;
-            state.isRefresing = false;
+            state.isRefreshing = false;
         },
         [refreshCurrentUser.rejected](state) {
             state.isRefreshing = false;
