@@ -1,15 +1,16 @@
 import { useAuth } from "hooks/useAuth";
+import { Notify } from "notiflix";
 import { useDispatch } from "react-redux";
 import { logOut } from "redux/auth/operations";
-
+import AuthLoader from "components/Loaders/AuthLoader";
 
 
 export const UserInfo = () => {
-    const { userInfo } = useAuth()
+    const { userInfo, isLoading, isError } = useAuth()
     const dispatch = useDispatch();
     const handleExit = () => {
         dispatch(logOut())
-        console.log("Successfuly exit")
+        Notify.success("Successfuly exit")
     }
 
     return (
@@ -19,6 +20,8 @@ export const UserInfo = () => {
             <button onClick={handleExit}>
                 Log out
             </button>
+
+             {!isError && isLoading && <AuthLoader />}
         </>
     );
 };

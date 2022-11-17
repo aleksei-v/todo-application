@@ -1,12 +1,15 @@
+import { useAuth } from "hooks/useAuth";
 import { NavLink } from "react-router-dom"
 
 
 export const UserMenu = () => {
-
+ const { isLoggedIn } = useAuth();
     return (
         <>
-           <NavLink to='home'>Home</NavLink>
-            <NavLink to='todos'>Todos</NavLink>
+            {isLoggedIn
+                ? <NavLink to='todos'>Todos</NavLink>
+                : <NavLink to='home'>Home</NavLink>
+            }
         </>
             )
             

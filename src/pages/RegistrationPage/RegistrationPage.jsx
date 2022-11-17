@@ -1,11 +1,11 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
-import styled from 'styled-components';
+import { ErrorText } from './RegistrationPage.styled';
 import * as yup from 'yup';
-const ErrorText = styled.p`
-    color: red
-`;
+import { useAuth } from 'hooks/useAuth';
+import AuthLoader from 'components/Loaders/AuthLoader';
+
 
 const FormError = ({ name }) => (
     <ErrorMessage
@@ -26,7 +26,7 @@ const initialValues = {
 };
     
 const RegistationPage = () => {
-
+    const { isLoading, isError } = useAuth();
     const dispatch = useDispatch()
     const handleSubmit = ({name, email,password}, {resetForm}) => {
         dispatch(register({name, email, password}))
@@ -56,6 +56,7 @@ const RegistationPage = () => {
                     <button type="submit">Sign up</button>
                 </Form>
             </Formik>
+            {!isError && isLoading && <AuthLoader />}
         </>
     )
 };

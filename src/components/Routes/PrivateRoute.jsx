@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 import { useAuth } from 'hooks/useAuth';
-import { Outlet } from "react-router-dom";
+import CustomOutlet from "components/Outlet";
 
 const PrivateRoute = () => {
     const { isLoggedIn } = useAuth();
@@ -9,7 +9,7 @@ const PrivateRoute = () => {
         
         return <Navigate to="/login" />
     }
-    return <Outlet/>
+    return <CustomOutlet/>
 }
  
 export default PrivateRoute;

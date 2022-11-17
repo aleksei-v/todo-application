@@ -2,12 +2,15 @@ import { Box } from "components/Box"
 import { useGetTodoQuery } from "redux/todos/slice";
 import { TodoListItem } from 'components/TodoListItem/TodoListItem';
 import { BackLink } from './TodosPage.styled';
+import { useEffect } from "react";
 
-export const TodosPage = () => {
+const TodosPage = () => {
 
-    const { data: todos, error, isFetching } = useGetTodoQuery();
-    
-
+    const { data: todos, error, isFetching, refetch } = useGetTodoQuery();
+    // console.log(todos.length)
+    useEffect(() => {
+        refetch();
+    }, [refetch]);
     return (
         <Box>
             <BackLink to='/todos/create'>Create todo</BackLink>
@@ -22,3 +25,5 @@ export const TodosPage = () => {
         </Box>
     )
 };
+
+export default TodosPage;

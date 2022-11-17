@@ -1,8 +1,11 @@
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Field, ErrorMessage } from 'formik';
 import { useDispatch } from 'react-redux';
+import { Box } from 'components/Box';
 import { login } from 'redux/auth/operations';
 import * as yup from 'yup';
-import { ErrorText } from './LoginPage.styled';
+import { ErrorText, StyledForm } from './LoginPage.styled';
+import AuthLoader from "components/Loaders/AuthLoader";
+import { useAuth } from 'hooks/useAuth';
 
 const FormError = ({ name }) => (
     <ErrorMessage
@@ -22,16 +25,20 @@ const initialValues = {
     
 const LoginPage = () => {
 
+    const { isLoading, isError } = useAuth();
     const dispatch = useDispatch()
-    const handleSubmit = ({email,password}, {resetForm}) => {
-        dispatch(login({email, password}))
+    const handleSubmit = ({ email, password }, { resetForm }) => {
+        dispatch(login({ email, password }))
         resetForm()
-    }
+    };
+
     return (
         <>
+        <Box>
             <h2>LoginForm</h2>
+            
             <Formik initialValues={initialValues} validationSchema={schema} onSubmit={handleSubmit}>
-                <Form>
+                <StyledForm>
                     <label>
                         Your login
                         <Field type="email" name="email" />
@@ -44,9 +51,13 @@ const LoginPage = () => {
                         <FormError name='password' />
                     </label>
                     <button type="submit">Log in</button>
-                </Form>
+                </StyledForm>
+                
             </Formik>
-        </>
+              {!isError && isLoading && <AuthLoader />}
+        </Box>
+         
+            </>
     )
 };
 

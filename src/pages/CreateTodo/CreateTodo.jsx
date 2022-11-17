@@ -2,8 +2,7 @@ import { useCreateTodoMutation } from "redux/todos/slice";
 import { Navigate } from "react-router-dom";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-
-export const CreateTodoPage = () => {
+const CreateTodoPage = () => {
     const [createTodo, { isLoading, isSuccess }] = useCreateTodoMutation();
 
 
@@ -16,21 +15,23 @@ export const CreateTodoPage = () => {
 
         e.currentTarget.reset();
 
-       Notify.success("Заметка создана!");
+        Notify.success("Заметка создана!");
     }
 
   
     return (
         <>
-            {isSuccess && <Navigate to="/todos"/>}
+            {isSuccess && <Navigate to="/todos" />}
             <form autoComplete="off" onSubmit={handleSubmit}>
                 <input type="text" name="text" />
                 <button type="submit" disabled={isLoading}>{
                     isLoading ?
-                    <b>creating..</b>
-                    : <span>Create new todo</span>}
+                        <b>creating..</b>
+                        : <span>Create new todo</span>}
                 </button>
-        </form>
+            </form>
         </>
     )
-}
+};
+
+export default CreateTodoPage;
