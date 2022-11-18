@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/todo-application/static/css/main.01d547af.css",
-    "main.js": "/todo-application/static/js/main.b7bf2afe.js",
-    "static/js/589.d4cbff45.chunk.js": "/todo-application/static/js/589.d4cbff45.chunk.js",
-    "static/js/602.ad4670a0.chunk.js": "/todo-application/static/js/602.ad4670a0.chunk.js",
-    "static/js/680.c0ad4a2a.chunk.js": "/todo-application/static/js/680.c0ad4a2a.chunk.js",
-    "static/js/49.a44b4c28.chunk.js": "/todo-application/static/js/49.a44b4c28.chunk.js",
+    "main.js": "/todo-application/static/js/main.cd6360c2.js",
+    "static/js/589.7527c9d2.chunk.js": "/todo-application/static/js/589.7527c9d2.chunk.js",
+    "static/js/602.212d549a.chunk.js": "/todo-application/static/js/602.212d549a.chunk.js",
+    "static/js/680.25d9fc1a.chunk.js": "/todo-application/static/js/680.25d9fc1a.chunk.js",
+    "static/js/49.0e98914e.chunk.js": "/todo-application/static/js/49.0e98914e.chunk.js",
     "static/js/866.12e82d45.chunk.js": "/todo-application/static/js/866.12e82d45.chunk.js",
-    "static/js/964.b2b26a5d.chunk.js": "/todo-application/static/js/964.b2b26a5d.chunk.js",
+    "static/js/986.06170f18.chunk.js": "/todo-application/static/js/986.06170f18.chunk.js",
     "index.html": "/todo-application/index.html",
     "main.01d547af.css.map": "/todo-application/static/css/main.01d547af.css.map",
-    "main.b7bf2afe.js.map": "/todo-application/static/js/main.b7bf2afe.js.map",
-    "589.d4cbff45.chunk.js.map": "/todo-application/static/js/589.d4cbff45.chunk.js.map",
-    "602.ad4670a0.chunk.js.map": "/todo-application/static/js/602.ad4670a0.chunk.js.map",
-    "680.c0ad4a2a.chunk.js.map": "/todo-application/static/js/680.c0ad4a2a.chunk.js.map",
-    "49.a44b4c28.chunk.js.map": "/todo-application/static/js/49.a44b4c28.chunk.js.map",
+    "main.cd6360c2.js.map": "/todo-application/static/js/main.cd6360c2.js.map",
+    "589.7527c9d2.chunk.js.map": "/todo-application/static/js/589.7527c9d2.chunk.js.map",
+    "602.212d549a.chunk.js.map": "/todo-application/static/js/602.212d549a.chunk.js.map",
+    "680.25d9fc1a.chunk.js.map": "/todo-application/static/js/680.25d9fc1a.chunk.js.map",
+    "49.0e98914e.chunk.js.map": "/todo-application/static/js/49.0e98914e.chunk.js.map",
     "866.12e82d45.chunk.js.map": "/todo-application/static/js/866.12e82d45.chunk.js.map",
-    "964.b2b26a5d.chunk.js.map": "/todo-application/static/js/964.b2b26a5d.chunk.js.map"
+    "986.06170f18.chunk.js.map": "/todo-application/static/js/986.06170f18.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.01d547af.css",
-    "static/js/main.b7bf2afe.js"
+    "static/js/main.cd6360c2.js"
   ]
 }
