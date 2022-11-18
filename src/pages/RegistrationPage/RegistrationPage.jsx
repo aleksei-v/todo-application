@@ -5,6 +5,7 @@ import { ErrorText } from './RegistrationPage.styled';
 import * as yup from 'yup';
 import { useAuth } from 'hooks/useAuth';
 import AuthLoader from 'components/Loaders/AuthLoader';
+import { Box } from 'theme/Box';
 
 
 const FormError = ({ name }) => (
@@ -33,7 +34,7 @@ const RegistationPage = () => {
         resetForm()
     }
     return (
-        <>
+        <Box p={5}>
             <h2>Registation Form</h2>
             <Formik initialValues={initialValues} validationSchema={schema} onSubmit={handleSubmit}>
                 <Form>
@@ -57,7 +58,7 @@ const RegistationPage = () => {
                 </Form>
             </Formik>
             {!isError && isLoading && <AuthLoader />}
-        </>
+        </Box>
     )
 };
 

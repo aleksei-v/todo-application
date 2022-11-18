@@ -1,4 +1,4 @@
-
+import GlobalStyle from 'theme/GlobalStyle';
 import { useDispatch } from 'react-redux';
 import UserRoutes from 'components/Routes/UserRoutes';
 import { useAuth } from 'hooks/useAuth';
@@ -16,6 +16,7 @@ const App = () => {
         
   return (
     <>
+      <GlobalStyle/>
       {isRefresh
         ? <AuthLoader />
         : <UserRoutes />

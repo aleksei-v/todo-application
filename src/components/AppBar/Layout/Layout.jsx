@@ -1,4 +1,4 @@
-import { Box } from "components/Box";
+import { Box } from "theme/Box";
 import { useAuth } from "hooks/useAuth";
 import { UserMenu } from "../UserMenu";
 import { AuthNav } from "../AuthNav";

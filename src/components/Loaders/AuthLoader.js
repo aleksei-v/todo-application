@@ -1,4 +1,4 @@
-import { Box } from 'components/Box';
+import { Box } from 'theme/Box';
 import { RotatingLines  } from 'react-loader-spinner';
 
 const AuthLoader = () => {

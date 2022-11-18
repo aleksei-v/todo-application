@@ -1,6 +1,6 @@
 import { Formik, Field, ErrorMessage } from 'formik';
 import { useDispatch } from 'react-redux';
-import { Box } from 'components/Box';
+import { Box } from 'theme/Box';
 import { login } from 'redux/auth/operations';
 import * as yup from 'yup';
 import { ErrorText, StyledForm } from './LoginPage.styled';
@@ -34,7 +34,7 @@ const LoginPage = () => {
 
     return (
         <>
-        <Box>
+        <Box p={5}>
             <h2>LoginForm</h2>
             
             <Formik initialValues={initialValues} validationSchema={schema} onSubmit={handleSubmit}>
