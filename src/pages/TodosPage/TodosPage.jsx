@@ -7,7 +7,6 @@ import { useEffect } from "react";
 const TodosPage = () => {
 
     const { data: todos, error, isFetching, refetch } = useGetTodoQuery();
-    // console.log(todos.length)
     useEffect(() => {
         refetch();
     }, [refetch]);
