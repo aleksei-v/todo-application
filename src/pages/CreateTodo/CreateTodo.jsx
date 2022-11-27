@@ -1,6 +1,7 @@
 import { useCreateTodoMutation } from "redux/todos/slice";
 import { Navigate } from "react-router-dom";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { Box } from "theme/Box";
 
 const CreateTodoPage = () => {
     const [createTodo, { isLoading, isSuccess }] = useCreateTodoMutation();
@@ -10,8 +11,9 @@ const CreateTodoPage = () => {
         e.preventDefault();
 
         const content = e.currentTarget.elements.text.value;
-        
+        console.log(content)
         createTodo(content);
+        console.log(isSuccess)
 
         e.currentTarget.reset();
 
@@ -20,17 +22,17 @@ const CreateTodoPage = () => {
 
   
     return (
-        <>
+        <Box p={6}>
             {isSuccess && <Navigate to="/todos" />}
-            <form autoComplete="off" onSubmit={handleSubmit}>
-                <input type="text" name="text" />
+            <Box as='form' display='flex' gridGap={5} autoComplete="off" onSubmit={handleSubmit}>
+                <Box as='input' width='300px' type="text" name="text" />
                 <button type="submit" disabled={isLoading}>{
                     isLoading ?
                         <b>creating..</b>
                         : <span>Create new todo</span>}
                 </button>
-            </form>
-        </>
+            </Box>
+        </Box>
     )
 };
 

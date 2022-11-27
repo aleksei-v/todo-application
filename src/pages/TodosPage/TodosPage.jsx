@@ -3,6 +3,7 @@ import { useGetTodoQuery } from "redux/todos/slice";
 import { TodoListItem } from 'components/TodoListItem/TodoListItem';
 import { BackLink } from './TodosPage.styled';
 import { useEffect } from "react";
+import TodoLoader from "components/Loaders/TodoLoader";
 
 const TodosPage = () => {
 
@@ -10,11 +11,12 @@ const TodosPage = () => {
     useEffect(() => {
         refetch();
     }, [refetch]);
+    console.log(todos)
     return (
         <Box>
             <BackLink to='/todos/create'>Create todo</BackLink>
             
-            {isFetching && <b>Is loading...</b>}
+            {isFetching && <TodoLoader/>}
 
             <ul>
                 {todos && !isFetching && !error && todos.map((todo) => (
