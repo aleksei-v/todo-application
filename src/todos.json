@@ -1,17 +1,7 @@
 [
-      {
-        "id": "id-1",
-        "text": "Сделать первые 5 стр. дипломной работы", 
-        "completed": false
-      },
-       {
-        "id": "id-2",
-        "text": "Начать выполнение дз 2-го модуля", 
-        "completed": false
-       },
-        {
-        "id": "id-3",
-        "text": "Досмотреть вебинар Репеты", 
-        "completed": false
-      }
-    ]
+  {
+    "id": "id-1",
+    "title": "Test task",
+    "completed": false
+  }
+]
